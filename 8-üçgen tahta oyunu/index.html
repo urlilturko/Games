@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Üçgen Tahta Oyunu</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;s
+        }
+        #gameBoard {
+            margin: 20px;
+            background-color: #1e90ff;
+            padding: 20px;
+            border-radius: 50%;
+            max-width: 95vw;
+            max-height: 95vh;
+            width: 390px;
+            height: 390px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .row {
+            display: flex;
+            justify-content: center;
+            margin: 3px 0;
+            height: 50px;
+        }
+        .cell {
+            width: 50px;
+            height: 50px;
+            border: 1px solid #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            background-color: #fff;
+            margin: 0 3px;
+        }
+        /* Kenarlardaki kareleri gizle */
+        .cell[data-row="0"][data-col="0"],
+        .cell[data-row="0"][data-col="1"],
+        .cell[data-row="0"][data-col="5"],
+        .cell[data-row="0"][data-col="6"],
+        .cell[data-row="1"][data-col="0"],
+        .cell[data-row="1"][data-col="1"],
+        .cell[data-row="1"][data-col="5"],
+        .cell[data-row="1"][data-col="6"],
+        .cell[data-row="5"][data-col="0"],
+        .cell[data-row="5"][data-col="1"],
+        .cell[data-row="5"][data-col="5"],
+        .cell[data-row="5"][data-col="6"],
+        .cell[data-row="6"][data-col="0"],
+        .cell[data-row="6"][data-col="1"],
+        .cell[data-row="6"][data-col="5"],
+        .cell[data-row="6"][data-col="6"] {
+            display: none;
+        }
+        .black {
+            background-color: #000;
+            border-radius: 50%;
+            width: 35px;
+            height: 35px;
+        }
+        .empty {
+            background-color: #fff;
+            border: 2px solid #333;
+            border-radius: 50%;
+            width: 35px;
+            height: 35px;
+        }
+        .selected {
+            background-color: #4CAF50;
+        }
+        .valid-move {
+            background-color: #90EE90;
+        }
+    </style>
+</head>
+<body>
+    <h1>Üçgen Tahta Oyunu</h1>
+    <div id="gameBoard"></div>
+    <button id="resetButton">Yeniden Başlat</button>
+    <script src="game.js"></script>
+</body>
+</html> 
